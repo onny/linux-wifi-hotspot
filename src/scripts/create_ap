@@ -247,6 +247,8 @@ is_interface() {
 }
 
 is_wifi_interface() {
+    echo $1
+    echo "$1"
     which iw > /dev/null 2>&1 && iw dev $1 info > /dev/null 2>&1 && return 0
     if which iwconfig > /dev/null 2>&1 && iwconfig $1 > /dev/null 2>&1; then
         USE_IWCONFIG=1
