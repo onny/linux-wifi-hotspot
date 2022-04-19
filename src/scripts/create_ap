@@ -1365,8 +1365,9 @@ if [[ $FREQ_BAND != 5 && $CHANNEL -gt 14 ]]; then
 fi
 
 WIFI_IFACE=$1
+echo $WIFI_IFACE
 
-if ! is_wifi_interface ${WIFI_IFACE}; then
+if ! is_wifi_interface "${WIFI_IFACE}"; then
     echo "ERROR: '${WIFI_IFACE}' is not a WiFi interface" >&2
     exit 1
 fi
